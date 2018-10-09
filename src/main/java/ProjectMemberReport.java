@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
  */
 public class ProjectMemberReport {
 
-    //    private Map<String, Integer> projects;
     private List<List<Project>> bunchOfProjects;
     private List<Project> projects;
     private Map<String, String> alreadySignedUpStudents;
@@ -31,7 +30,7 @@ public class ProjectMemberReport {
                 initializeValuesForNewTemplate();
             } else {
                 if (isStudentNickname(line)) {
-                    if (doesStudentAleadySignedUp(line))
+                    if (doesStudentAlreadySignedUp(line))
                         removeStudent(project);
                     else {
                         if (project.canStudentSignUpThenDo(line))
@@ -55,7 +54,7 @@ public class ProjectMemberReport {
         return line.equals(line.toLowerCase());
     }
 
-    private boolean doesStudentAleadySignedUp(String studentName) {
+    private boolean doesStudentAlreadySignedUp(String studentName) {
         return alreadySignedUpStudents.containsKey(studentName);
     }
 

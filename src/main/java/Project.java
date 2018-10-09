@@ -50,9 +50,9 @@ public class Project implements Comparable<Project> {
     }
 
     @Override
-    public int compareTo(Project o) {
-        if (Integer.compare(getCountOfSignedUpStudents(), o.getCountOfSignedUpStudents()) == 0)
-            return projectName.compareTo(o.projectName);
-        return Integer.compare(getCountOfSignedUpStudents(), o.getCountOfSignedUpStudents()) * -1;
+    public int compareTo(Project project) {
+        if (Integer.compare(getCountOfSignedUpStudents(), project.getCountOfSignedUpStudents()) == 0)
+            return projectName.compareTo(project.projectName);
+        return Integer.compare(getCountOfSignedUpStudents(), project.getCountOfSignedUpStudents()) * -1;
     }
 }
