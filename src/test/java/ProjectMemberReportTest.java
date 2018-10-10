@@ -23,7 +23,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void one_uppercase_word_one_lowercase_word() {
+    public void one_project_one_student() {
         input.append("AAA\r\n")
                 .append("good01\r\n")
                 .append("1\r\n")
@@ -33,7 +33,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void one_uppercase_word_two_lowercase_words() {
+    public void one_project_two_students() {
         // given
         input.append("AAA\r\n")
                 .append("good01\r\n")
@@ -47,7 +47,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void one_uppercase_word_two_same_lowercase_words() {
+    public void one_project_same_students_signed_up_twice() {
         // given
         input.append("AAA\r\n")
                 .append("good01\r\n")
@@ -61,7 +61,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void two_uppercase_word_one_lowercase_words() {
+    public void two_projects_one_student() {
         input.append("AAA\r\n")
                 .append("BBB\r\n")
                 .append("good01\r\n")
@@ -75,7 +75,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void two_project_each_have_one_student() {
+    public void two_projects_each_have_one_student() {
         input.append("AAA\r\n")
                 .append("good01\r\n")
                 .append("BBB\r\n")
@@ -90,7 +90,7 @@ public class ProjectMemberReportTest {
     }
 
     @Test
-    public void two_project_each_have_same_one_student() {
+    public void two_projects_each_have_same_one_student() {
         input.append("AAA\r\n")
                 .append("good01\r\n")
                 .append("BBB\r\n")
