@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  * Created by no.pain.no.code@gmail.com
  * nopainnocode.tistory.com
  */
-public class ProjectMemberReportTest {
+public class ProjectMemberReporterTest {
 
     private StringBuilder input;
     private StringBuilder expectedOutput;
@@ -166,8 +166,8 @@ public class ProjectMemberReportTest {
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
 
         // when
-        ProjectMemberReport projectMemberReport = new ProjectMemberReport();
-        String returnValue = projectMemberReport.getProjectsNameAndCountOfMembers();
+        ProjectMemberReporter projectMemberReporter = new ProjectMemberReporter();
+        String returnValue = projectMemberReporter.getProjectsNameAndCountOfMembers();
 
         // then
         assertThat(returnValue, is(expected));
