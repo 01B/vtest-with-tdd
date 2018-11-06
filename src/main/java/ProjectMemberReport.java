@@ -12,7 +12,7 @@ public class ProjectMemberReport {
     private Map<String, String> alreadySignedUpStudents;
     private String line;
 
-    public ProjectMemberReport() {
+    ProjectMemberReport() {
         bunchOfProjects = new ArrayList<>();
         projects = new ArrayList<>();
         alreadySignedUpStudents = new HashMap<>();
@@ -22,27 +22,38 @@ public class ProjectMemberReport {
         Scanner scanner = new Scanner(System.in);
         Project project = new Project();
 
-        while (scanner.hasNext()
-                && !(line = scanner.nextLine()).equals("0")) {
-
-            if ("1".equals(line)) {
-                bunchOfProjects.add(projects);
-                initializeValuesForNewTemplate();
-            } else {
-                if (isStudentNickname(line)) {
-                    if (doesStudentAlreadySignedUp(line))
-                        removeStudent(project);
-                    else {
-                        if (project.canStudentSignUpThenDo(line))
-                            alreadySignedUpStudents.put(line, project.getProjectName());
-                    }
-                } else
+        while (isNextLineExist(scanner))
+            if (isEndOfOneTemplate())
+                addProjectAndInitialize();
+            else
+                if (isStudentNickname(line))
+                    dealWithStudentNickName(project);
+                else
                     project = initializeNewProject();
 
-            }
-        }
-
         return getAllProjectsNameAndCount();
+    }
+
+    private boolean isNextLineExist(Scanner scanner) {
+        return scanner.hasNext()
+                && !(line = scanner.nextLine()).equals("0");
+    }
+
+    private void dealWithStudentNickName(Project project) {
+        if (doesStudentAlreadySignedUp(line))
+            removeStudent(project);
+        else
+            if (project.canStudentSignUpThenDo(line))
+                alreadySignedUpStudents.put(line, project.getProjectName());
+    }
+
+    private boolean isEndOfOneTemplate() {
+        return "1".equals(line);
+    }
+
+    private void addProjectAndInitialize() {
+        bunchOfProjects.add(projects);
+        initializeValuesForNewTemplate();
     }
 
     private void initializeValuesForNewTemplate() {
