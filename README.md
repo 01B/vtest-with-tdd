@@ -49,5 +49,5 @@ coding test from V** for practice
 // Sample Output
 // YOUBOOK 2
 // LIVESPACE BLOGJAM 1
-// UBQTS TXT 1
+// UBQTS TXT 1  
 // SKINUX 0
